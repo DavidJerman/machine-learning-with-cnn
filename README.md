@@ -1,3 +1,5 @@
+This is still incomplete.
+
 # Machine Learning with CNN
 
 A machine learning project in Python.
