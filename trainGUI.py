@@ -8,15 +8,6 @@ from tkinter import messagebox
 import psutil as sm
 from threading import Timer
 import numpy as np
-
-# Using PlaidML to speed up the training/testing process, since Tensorflow is not an option for me because
-# it requires an NVIDIA card, which I don't own. PlaidML on the other side is not based on CUDA but on OpenGL and thus
-# (almost) any graphics card can be used with PlaidML (in my case I have a Radeon RX 480 graphics card which speeds up
-# the training process by about 100% as if I were to use my CPU).
-
-# Installing plaidml as backend before importing keras to ensure that correct backend is used with keras
-os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
-
 from keras.models import Sequential
 from keras.layers import Convolution2D
 from keras.layers import MaxPooling2D
@@ -28,6 +19,10 @@ from keras.optimizers import Adam
 from keras.optimizers import SGD
 from keras.preprocessing.image import ImageDataGenerator
 import keras
+
+# All the things that need to be done:
+# Fix the Tensorflow GPU backend (at the end of training the training is not really cancelled)
+# Change how the layers are added to the network
 
 
 class Application(tk.Frame):
@@ -661,6 +656,7 @@ class Application(tk.Frame):
             value = widget.get(index)
             self.optimizer_var.set(value)
         except IndexError:
+            # TODO: Error message
             pass
 
     def onselect_loss_function(self, event):
@@ -676,6 +672,7 @@ class Application(tk.Frame):
             value = widget.get(index)
             self.loss_function_var.set(value)
         except IndexError:
+            # TODO: Error message
             pass
 
     def onselect_metrics(self, event):
@@ -691,6 +688,7 @@ class Application(tk.Frame):
             value = widget.get(index)
             self.metrics_var.set(value)
         except IndexError:
+            # TODO: Error message
             pass
 
     def clear_output(self):

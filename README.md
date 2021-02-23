@@ -1,5 +1,11 @@
 This is still incomplete.
 
+### TODO LIST
+Run the training in a separate process, solving the memory problem.
+Optimize the code (method generalization, removal of obsolete code).
+Update the old documentation and the word document with proper language and the changes in the project
+(new code, new features, different data processing etc.).
+
 # Machine Learning with CNN
 
 A machine learning project in Python.
