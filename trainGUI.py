@@ -20,10 +20,6 @@ from keras.optimizers import SGD
 from keras.preprocessing.image import ImageDataGenerator
 import keras
 
-# All the things that need to be done:
-# Fix the Tensorflow GPU backend (at the end of training the training is not really cancelled)
-# Change how the layers are added to the network
-
 
 class Application(tk.Frame):
     """
@@ -78,7 +74,7 @@ class Application(tk.Frame):
         self.time_var = tk.StringVar()
         self.train_len_var = tk.IntVar()
         self.stopped_training_var = tk.BooleanVar()
-        self.network = [[[] for x in range(8)] for y in range(50)]
+        self.network = [[[] for _ in range(8)] for __ in range(50)]
         self.model = None
         self.train_job_thread = None
 
@@ -1136,7 +1132,7 @@ class Application(tk.Frame):
                 pass
             self.destroy_layer(None, top)
             self.network_position_index -= 1
-            self.network[top] = [[] for x in range(7)]
+            self.network[top] = [[] for _ in range(7)]
 
     def move_layer_up(self, event):
         """
@@ -1518,7 +1514,7 @@ class Application(tk.Frame):
                                      validation_data=test,
                                      validation_steps=test_samples,
                                      verbose=0,
-                                     workers=8,
+                                     workers=-1,
                                      callbacks=[self.callbacks])
             if not self.stopped_training_var.get():
                 self.write_output_model("Training finished!")
@@ -1530,6 +1526,8 @@ class Application(tk.Frame):
             self.load_network_button.config(state=tk.NORMAL)
             save_name = "model" + datetime.datetime.now().strftime('__%Y_%m_%d__%H_%M_%S') + ".h5"
             self.model.save(self.save_folder_var.get() + "/" + save_name)
+        self.write_output_warning("Training stopped")
+        self.write_output_warning("To start training a new model, please restart the application.")
 
     def close_thread(self):
         """
@@ -1619,7 +1617,7 @@ class Application(tk.Frame):
         for index in range(self.network_position_index):
             self.destroy_layer(None, index)
             self.network_position_index -= 1
-            self.network[index] = [[] for x in range(7)]
+            self.network[index] = [[] for _ in range(7)]
         self.first_layer = True
 
     def about(self):
@@ -1729,7 +1727,9 @@ class Callbacks(keras.callbacks.Callback):
             self.write_output("Acc:              " + str(round(logs.get('acc'), 4)))
             self.write_output("Val acc:          " + str(round(logs.get('val_acc'), 4)))
             self.i += 1
-        self.model.stop_training = False
+            self.model.stop_training = False
+        else:
+            self.model.stop_training = True
 
     def on_epoch_begin(self, epoch, logs=None):
         """
@@ -1811,8 +1811,10 @@ class SystemResourceMonitor:
         self.time_var.set(datetime.datetime.now().strftime('%H:%M:%S'))
 
 
-# https://stackoverflow.com/questions/474528/what-is-the-best-way-to-repeatedly-execute-a-function-every-x-seconds
 class RepeatedTimer(object):
+    """
+    A repeater, a timer
+    """
     def __init__(self, interval, function, *args, **kwargs):
         self._timer = None
         self.interval = interval
