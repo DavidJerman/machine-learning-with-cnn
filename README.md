@@ -57,8 +57,8 @@ and marking your own using the Python computer language.](https://books.google.s
 * os
 * tkinter
 * ~~plaidml (Link: https://github.com/plaidml/plaidml)~~
-* keras... (Read more in Wiki)
-* Tensorflow GPU
+* keras
+* Tensorflow GPU...
 
 ## Other requirements
 * CUDA GPU (Nvidia)
