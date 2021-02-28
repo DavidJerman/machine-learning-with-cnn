@@ -1,11 +1,3 @@
-This is still incomplete.
-
-### TODO LIST
-Run the training in a separate process, solving the memory problem.
-Optimize the code (method generalization, removal of obsolete code).
-Update the old documentation and the word document with proper language and the changes in the project
-(new code, new features, different data processing etc.).
-
 # Machine Learning with CNN
 
 A machine learning project in Python.
@@ -39,9 +31,13 @@ PlaidML: https://github.com/plaidml/plaidml. The main reason for usage of this b
 my computer, since Tensorflow GPU works only with GPUs that support CUDA core technology (that means Nvidia GPUs only).
 PlaidML relies on OpenGL instead, allowing the usage of any GPU (Amd GPU in my case) to speed up the model learning
 process. A GPU can speed up the learning process by at least 50%.
+### Update
+Later in the project the backend was updated from PlaidML to Tensorflow GPU due to harware change in my personal computer.
+Basically I changed from an AMD (RX 480) GPU, which does not support CUDA to an Nvidia (RTX 3080) GPU, which does support
+CUDA and thus I was able to use Tensorflow GPU which is based on the CUDA technology.
 
 ## Future plans
-The idea is to improve the model performance and expand the training/testing program functionality. 
+The idea is to improve the model performance and expand the training/testing program functionality.
 
 ## This project's resources
 * Training and test dataset: 
@@ -60,5 +56,17 @@ and marking your own using the Python computer language.](https://books.google.s
 * datetime
 * os
 * tkinter
-* plaidml (Link: https://github.com/plaidml/plaidml)
+* ~~plaidml (Link: https://github.com/plaidml/plaidml)~~
 * keras... (Read more in Wiki)
+* Tensorflow GPU
+
+## Other requirements
+* CUDA GPU (Nvidia)
+* cudNN
+* Python
+
+### TODO LIST
+~~Run the training in a separate process, solving the memory problem.~~
+~~Optimize the code (method generalization, removal of obsolete code).~~
+~~Update the old documentation and the word document with proper language and the changes in the project
+(new code, new features, different data processing etc.).~~
