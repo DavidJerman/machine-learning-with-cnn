@@ -24,7 +24,9 @@ better accuracy using the same model. Another reason for the average performance
 classes, since this model was trained using 62 different characters.
 Better performance might be achieved by increasing the number of layers in the network.
 #### Update 
-I managed to create a better model (91% val acc), which is explained in detail in the wiki section of this project.
+I managed to create a better model (91% val acc). Explanation below:
+##### The 91% Model
+#TODO
 
 ## The backend
 The backend in this project is not Tensorflow/ Tensorflow GPU as usually. Instead, the backend used in this project is
