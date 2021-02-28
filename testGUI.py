@@ -1,5 +1,4 @@
 import datetime
-import os
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
@@ -12,11 +11,24 @@ from PIL import ImageTk, Image, ImageGrab
 # the training process by about 100% as if I were to use my CPU).
 
 # Installing plaidml as backend before importing keras to ensure that correct backend is used with keras
-os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
+# os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
 
 from keras.models import load_model
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
+
+import tensorflow as tf
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    try:
+        # Currently, memory growth needs to be the same across GPUs
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+        logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+        print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    except RuntimeError as e:
+        # Memory growth must be set before GPUs have been initialized
+        print(e)
 
 
 class Application(tk.Frame):
@@ -358,13 +370,13 @@ class Application(tk.Frame):
         """
         try:
             if self.isValidModel:
-                self.image_size[0] = self.model.get_input_shape_at(0)[1]
-                self.image_size[1] = self.model.get_input_shape_at(0)[1]
+                self.image_size[0] = self.model.get_layer(index=0).get_config()["batch_input_shape"][1]
+                self.image_size[1] = self.model.get_layer(index=0).get_config()["batch_input_shape"][2]
                 # White-black images
-                if self.model.get_input_shape_at(0)[3] == 1:
+                if self.model.get_layer(index=0).get_config()["batch_input_shape"][3] == 1:
                     self.color_depth = 1
                 # Color images
-                elif self.model.get_input_shape_at(0)[3] == 3:
+                elif self.model.get_layer(index=0).get_config()["batch_input_shape"][3] == 3:
                     self.color_depth = 3
                 # Model not compatible with this program
                 else:
