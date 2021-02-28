@@ -23,7 +23,8 @@ The main reason for this average score is the dataset I used since using other d
 better accuracy using the same model. Another reason for the average performance of the model is the large amount of
 classes, since this model was trained using 62 different characters.
 Better performance might be achieved by increasing the number of layers in the network.
-Update: I managed to create a better model (91% val acc), which is explained in detail in the wiki section of this project.
+####Update 
+I managed to create a better model (91% val acc), which is explained in detail in the wiki section of this project.
 
 ## The backend
 The backend in this project is not Tensorflow/ Tensorflow GPU as usually. Instead, the backend used in this project is
@@ -31,7 +32,7 @@ PlaidML: https://github.com/plaidml/plaidml. The main reason for usage of this b
 my computer, since Tensorflow GPU works only with GPUs that support CUDA core technology (that means Nvidia GPUs only).
 PlaidML relies on OpenGL instead, allowing the usage of any GPU (Amd GPU in my case) to speed up the model learning
 process. A GPU can speed up the learning process by at least 50%.
-### Update
+#### Update
 Later in the project the backend was updated from PlaidML to Tensorflow GPU due to harware change in my personal computer.
 Basically I changed from an AMD (RX 480) GPU, which does not support CUDA to an Nvidia (RTX 3080) GPU, which does support
 CUDA and thus I was able to use Tensorflow GPU which is based on the CUDA technology.
