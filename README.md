@@ -23,7 +23,7 @@ The main reason for this average score is the dataset I used since using other d
 better accuracy using the same model. Another reason for the average performance of the model is the large amount of
 classes, since this model was trained using 62 different characters.
 Better performance might be achieved by increasing the number of layers in the network.
-####Update 
+#### Update 
 I managed to create a better model (91% val acc), which is explained in detail in the wiki section of this project.
 
 ## The backend
