@@ -5,7 +5,11 @@ The project includes both training and testing GUI.
 The aim of this project is (English) character recognition.
 
 ## Contents
-### [The training GUI](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-training-gui "README.md")
+* [The training GUI](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-training-gui "README.md")
+  * [How to use the training program](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#how-to-use-the-program "README.md")
+    * [Selecting the data](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#selecting-the-data)
+      * [Building the model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#building-the-model)
+      * [Setting the layer [parameters](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#setting-the-layer-parameters)
 
 ## The training GUI
 This simple GUI allows the user to make a machine learning model without even typing any code.
