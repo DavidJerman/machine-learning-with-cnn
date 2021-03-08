@@ -39,7 +39,7 @@ To start building the model, use the interface on the left:
    * ACC (Accuracy),
    * MAE (Mean Absolute Error).
 
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The selected metrics is also displayed in the widget on the right part of the interface below the **Metrics** field.
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The selected metrics is also displayed in the widget on the right part of the interface below the **Metrics** field.
    
 11. Now start building the model by adding the layers located below the **Add Layer** button. First select the desired layer and by clicking on the **Add Layer** button add the selected layer to the model. The most important available layers are:
    * Input (Input layer, not neccessary, a convolution layer can be used instead),
