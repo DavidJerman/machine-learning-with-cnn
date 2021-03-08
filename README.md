@@ -6,10 +6,13 @@ The aim of this project is (English) character recognition.
 
 ## Contents
 * [The training GUI](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-training-gui "README.md")
-  * [How to use the training program](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#how-to-use-the-program "README.md")
-    * [Selecting the data](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#selecting-the-data)
-    * [Building the model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#building-the-model)
-      * [Setting the layer [parameters](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#setting-the-layer-parameters)
+ * [How to use the training program](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#how-to-use-the-program "README.md")
+  * [Selecting the data](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#selecting-the-data "README.md")
+  * [Building the model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#building-the-model "README.md")
+   * [Setting the layer [parameters](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#setting-the-layer-parameters "README.md")
+  * [Post and pre model building](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#post-and-pre-model-building "README.md")
+   * [Output shape](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#getting-the-final-output-shape "README.md")
+   * [Saving and loading the model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#saving-and-loading-the-model "README.md")
 
 ## The training GUI
 This simple GUI allows the user to make a machine learning model without even typing any code.
