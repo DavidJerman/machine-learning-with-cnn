@@ -4,6 +4,9 @@ A machine learning project in Python.
 The project includes both training and testing GUI.
 The aim of this project is (English) character recognition.
 
+## Contents
+[The training GUI](#https://github.com/DavidJerman/machine-learning-with-cnn#the-training-gui)
+
 ## The training GUI
 This simple GUI allows the user to make a machine learning model without even typing any code.
 The structure of the program allows easy expansion of it, that is, adding more layers, optimizers etc. to the program
