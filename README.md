@@ -26,7 +26,7 @@ To start building the model, use the interface on the left:
 7. Select the model optimizer below the **Optimizers** field:
    * Adam,
    * SGD.
-   [//]: # (New line)
+[//]: # (New line)
    The selected optimizer is also displayed in the widget on the right part of the interface below the **Optimizer** field.
 8. Enter the learning rate below the **LR** button. Clicking on the **LR** buttpn sets the learning rate to a deault value of 0,01.
 9. Select the loss function below the **Loss function** field by clicking on the desired loss function:
