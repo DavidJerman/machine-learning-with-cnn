@@ -5,7 +5,7 @@ The project includes both training and testing GUI.
 The aim of this project is (English) character recognition.
 
 ## Contents
-[The training GUI](#https://github.com/DavidJerman/machine-learning-with-cnn#the-training-gui)
+[The training GUI](#https://github.com/DavidJerman/machine-learning-with-cnn/README.md#the-training-gui)
 
 ## The training GUI
 This simple GUI allows the user to make a machine learning model without even typing any code.
