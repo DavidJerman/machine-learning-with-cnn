@@ -13,6 +13,9 @@ The aim of this project is (English) character recognition.
     * [Post and pre model building](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#post-and-pre-model-building "README.md")
       * [Output shape](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#getting-the-final-output-shape "README.md")
       * [Saving and loading the model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#saving-and-loading-the-model "README.md")
+* [The test GUI](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-test-gui "README.md")
+* [The CNN model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-cnn-model "README.md")
+* 
 
 ## The training GUI
 This simple GUI allows the user to make a machine learning model without even typing any code.
