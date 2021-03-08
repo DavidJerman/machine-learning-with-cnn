@@ -102,17 +102,17 @@ and marking your own using the Python computer language.](https://books.google.s
 * Max Tegmark, 2017: <i/>[Life 3.0: Being Human in the Age of Artificial Intelligence.](https://www.goodreads.com/book/show/34272565-life-3-0 "Good reads")</i>
 
 ## Required Python libraries
-* datetime
-* os
-* tkinter
-* ~~plaidml (Link: https://github.com/plaidml/plaidml)~~
-* keras
+* datetime,
+* os,
+* tkinter,
+* ~~plaidml (Link: https://github.com/plaidml/plaidml),~~
+* keras,
 * Tensorflow GPU...
 
 ## Other requirements
-* CUDA GPU (Nvidia)
-* cudNN
-* Python
+* CUDA GPU (Nvidia),
+* cudNN,
+* Python.
 
 ### TODO LIST
 ~~Run the training in a separate process, solving the memory problem.~~
