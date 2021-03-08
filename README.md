@@ -26,17 +26,19 @@ To start building the model, use the interface on the left:
 7. Select the model optimizer below the **Optimizers** field:
    * Adam,
    * SGD.
-[//]: # (New line)
+
    The selected optimizer is also displayed in the widget on the right part of the interface below the **Optimizer** field.
 8. Enter the learning rate below the **LR** button. Clicking on the **LR** buttpn sets the learning rate to a deault value of 0,01.
 9. Select the loss function below the **Loss function** field by clicking on the desired loss function:
    * Binary CE (Binary Cross-Entropy),
    * Categorical CE (Categorical Cross-Entropy),
    * MSE (Mean squared error).
+
    The selected loss function is also displayed in the widget on the right part of the interface below the **Loss function** field.
 10. Select the metrics below the **Metrics** field by clicking on the desired metrics:
    * ACC (Accuracy),
    * MAE (Mean Absolute Error).
+
    The selected metrics is also displayed in the widget on the right part of the interface below the **Metrics** field.
 11. Now start building the model by adding the layers located below the **Add Layer** button. First select the desired layer and by clicking on the **Add Layer** button add the selected layer to the model. The most important available layers are:
    * Input (Input layer, not neccessary, a convolution layer can be used instead),
