@@ -36,17 +36,17 @@ To start building the model, use the interface on the left:
 
    The selected loss function is also displayed in the widget on the right part of the interface below the **Loss function** field.
 10. Select the metrics below the **Metrics** field by clicking on the desired metrics:
-   * ACC (Accuracy),
-   * MAE (Mean Absolute Error).
+    * ACC (Accuracy),
+    * MAE (Mean Absolute Error).
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The selected metrics is also displayed in the widget on the right part of the interface below the **Metrics** field.
    
 11. Now start building the model by adding the layers located below the **Add Layer** button. First select the desired layer and by clicking on the **Add Layer** button add the selected layer to the model. The most important available layers are:
-   * Input (Input layer, not neccessary, a convolution layer can be used instead),
-   * Convolution2D (Convolutional 2D layer),
-   * MaxPooling2D (Max Pooling 2D layer),
-   * Dropout (Dropout layer),
-   * Flatten (Flatten layer).
+    * Input (Input layer, not neccessary, a convolution layer can be used instead),
+    * Convolution2D (Convolutional 2D layer),
+    * MaxPooling2D (Max Pooling 2D layer),
+    * Dropout (Dropout layer),
+    * Flatten (Flatten layer).
 ##### Setting the layer parameters
 Each layer has its corresponding properties, which can be set inside of the layer itself. All of the values in the layer(s) have to be set or the model won't compile and run. Layer properties need to be entered inside of the corresponding text fields equiped with the property label name. To remove a specific layer, click on the **Remove** button located inside of the layer itself.
 #### Post and pre model-building
