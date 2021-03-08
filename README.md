@@ -47,6 +47,7 @@ To start building the model, use the interface on the left:
     * MaxPooling2D (Max Pooling 2D layer),
     * Dropout (Dropout layer),
     * Flatten (Flatten layer).
+
 ##### Setting the layer parameters
 Each layer has its corresponding properties, which can be set inside of the layer itself. All of the values in the layer(s) have to be set or the model won't compile and run. Layer properties need to be entered inside of the corresponding text fields equiped with the property label name. To remove a specific layer, click on the **Remove** button located inside of the layer itself.
 #### Post and pre model-building
