@@ -5,7 +5,7 @@ The project includes both training and testing GUI.
 The aim of this project is (English) character recognition.
 
 ## Contents
-Max Tegmark, 2017: <i/>[Life 3.0: Being Human in the Age of Artificial Intelligence.](https://www.goodreads.com/book/show/34272565-life-3-0 "Good reads")</i>
+<i/>[Life 3.0: Being Human in the Age of Artificial Intelligence.](https://www.goodreads.com/book/show/34272565-life-3-0 "Good reads")</i>
 
 ## The training GUI
 This simple GUI allows the user to make a machine learning model without even typing any code.
