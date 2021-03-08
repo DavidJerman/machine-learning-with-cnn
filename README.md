@@ -15,7 +15,15 @@ The aim of this project is (English) character recognition.
       * [Saving and loading the model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#saving-and-loading-the-model "README.md")
 * [The test GUI](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-test-gui "README.md")
 * [The CNN model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-cnn-model "README.md")
-* 
+  * [Update](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#update "README.md")
+  * [The 91% model](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-91-model "README.md")
+* [The old backend](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-old-backend "README.md")
+  * [Update - the new backend](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#update-1 "README.md")
+* [Future plans](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#future-plans "README.md")
+* [This project's resources](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#this-projects-resources "README.md")
+* [Required python libraries](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#required-python-libraries "README.md")
+* [Other requirements](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#other-requirements "README.md")
+* [TODO List](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#todo-list "README.md")
 
 ## The training GUI
 This simple GUI allows the user to make a machine learning model without even typing any code.
