@@ -1,4 +1,4 @@
-# Machine Learning with CNN
+# Machine Learning with CNN ![Imgur](https://i.imgur.com/iGDHJtP.jpg)
 
 A machine learning project in Python.
 The project includes both training and testing GUI.
@@ -95,7 +95,18 @@ Better performance might be achieved by increasing the number of layers in the n
 #### Update 
 I managed to create a better model (91% val acc). Explanation below:
 ##### The 91% Model
-#TODO
+The model structure used in this project is the following:
+
+![Imgur](https://i.imgur.com/F000tWX.png)
+
+The structure is pretty simple. I only used the Convolutional-2D and MaxPooling-2D layers, adn of course at the end
+the Flatten and the Dense layers. After each MaxPooling layer I also added a Dropout layer to avoid over-fitting the
+model. The dropout rate used on each dropout layer was 0.25. Input shape of the images was 128x128x1.
+
+![Imgur](https://i.imgur.com/Eyl6qQB.png)
+
+After training the model for 5 epochs, the model achieved accuracy of 91%, reaching the desired goal of 90%. Thus this
+project was a success!
 
 ## The (old) backend
 The backend in this project is not Tensorflow/ Tensorflow GPU as usually. Instead, the backend used in this project is
@@ -104,38 +115,44 @@ my computer, since Tensorflow GPU works only with GPUs that support CUDA core te
 PlaidML relies on OpenGL instead, allowing the usage of any GPU (Amd GPU in my case) to speed up the model learning
 process. A GPU can speed up the learning process by at least 50%.
 #### Update
-Later in the project the backend was updated from PlaidML to Tensorflow GPU due to harware change in my personal computer.
-Basically I changed from an AMD (RX 480) GPU, which does not support CUDA to an Nvidia (RTX 3080) GPU, which does support
+Later in the project the backend was updated from PlaidML to Tensorflow GPU due to hardware change in my personal computer.
+I changed from an AMD (RX 480) GPU, which does not support CUDA to an Nvidia (RTX 3080) GPU, which does support
 CUDA and thus I was able to use Tensorflow GPU which is based on the CUDA technology.
 
 ## Future plans
 The idea is to improve the model performance and expand the training/testing program functionality.
 
 ## This project's resources
-* Training and test dataset: 
-https://catalog.data.gov/dataset/nist-handprinted-forms-and-characters-nist-special-database-19.
-* Tkinter library information: https://docs.python.org/3/library/tkinter.html, 
-https://www.tutorialspoint.com/python/python_gui_programming.htm.
-* Everything about machine learning: https://www.kaggle.com/.
-* A useful Kaggle guide: https://www.kaggle.com/poonaml/deep-neural-network-keras-way.
+* Training and test dataset:
+  <i/>[NIST Special Dataset](https://catalog.data.gov/dataset/nist-handprinted-forms-and-characters-nist-special-database-19).
+* Tkinter library information: <i/>[Python docs](https://docs.python.org/3/library/tkinter.html),
+  <i/>[Tutorials Point: Python GUI programming](https://www.tutorialspoint.com/python/python_gui_programming.htm).
+* Everything about machine learning: <i/>[Kaggle](https://www.kaggle.com/).
+* A useful Kaggle guide: <i/>[Deep neural network Keras way](https://www.kaggle.com/poonaml/deep-neural-network-keras-way).
 *  Nils J. Nilsson, 2010: <i/>[The Quest for Artificial Intelligence.](https://www.goodreads.com/book/show/7465939-the-quest-for-artificial-intelligence "Good reads")</i>
 * Tariq Rashid, 2016: <i/>[Make Your Own Neural Network: A gentle journey through the mathematics of neural networks,
 and marking your own using the Python computer language.](https://books.google.si/books/about/Make_Your_Own_Neural_Network.html?id=Zli_jwEACAAJ&source=kp_book_description&redir_esc=y "Google books")</i>
 * C.-C. Jay Kuo, 2016: <i/>[Understanding Convolutional Neural Networks with A Mathematical Model.](https://arxiv.org/abs/1609.04112 "Arxiv")</i>
 * Max Tegmark, 2017: <i/>[Life 3.0: Being Human in the Age of Artificial Intelligence.](https://www.goodreads.com/book/show/34272565-life-3-0 "Good reads")</i>
 
-## Required Python libraries
+## Used Python libraries
 * datetime,
 * os,
+* time,
 * tkinter,
-* ~~plaidml (Link: https://github.com/plaidml/plaidml),~~
-* keras,
-* Tensorflow GPU...
+* threading,
+* psutil (Link: https://pypi.org/project/psutil/),
+* numpy (Link: https://numpy.org/),
+* Keras (Link: https://keras.io/),
+* Tensorflow GPU (Link: https://www.tensorflow.org/),
+* ~~plaidml (Link: https://github.com/plaidml/plaidml).~~
 
-## Other requirements
-* CUDA GPU (Nvidia),
-* cudNN,
-* Python.
+## Requirements
+* Mentioned libraries,
+* CUDA GPU (in this project used: GeForce RTX 3080),
+* Nvidia GPU Drivers (in this project used latest drivers: v461.92),
+* cudNN (in this project used v8.1),
+* Python 3.x (in this project used versions 3.7 and later 3.8).
 
 ### TODO LIST
 ~~Run the training in a separate process, solving the memory problem.~~
