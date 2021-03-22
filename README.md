@@ -4,6 +4,14 @@ A machine learning project in Python.
 The project includes both training and testing GUI.
 The aim of this project is (English) character recognition.
 
+## About files
+The two main programs created in this project and described below are **trainGUI.py** and **testGUI** located in
+the root folder. Other files in the root folder are mainly testing files used to test certain things during the
+development of the project. The folder **images** contains samples that can be used when testing the created model.
+The folder **nets** contains the saved networks of the **trainGUI**. The folder **GUIpreview** contains the previews
+of the old versions of the main programs. The folder **91Model** contains the structure and training process images of
+the final 91% model.
+
 ## Contents
 * [The training GUI](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#the-training-gui "README.md")
   * [How to use the training program](https://github.com/DavidJerman/machine-learning-with-cnn/blob/master/README.md#how-to-use-the-program "README.md")
