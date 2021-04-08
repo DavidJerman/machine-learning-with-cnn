@@ -2,7 +2,7 @@
 
 A machine learning project in Python.
 The project includes both training and testing GUI.
-The aim of this project is (English) character recognition.
+The aim of this project is (English) characters recognition.
 
 ## About files
 The two main programs created in this project and described below are **trainGUI.py** and **testGUI** located in
