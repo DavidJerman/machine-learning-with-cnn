@@ -10,7 +10,7 @@ from keras.layers import Flatten
 from keras.preprocessing.image import ImageDataGenerator
 
 image_size = 32
-path = "C:\\Users\\david\\ML Datasets\\Characters"
+path = "C:\\Users\\[name]\\ML Datasets\\Characters"
 
 nets = 15
 model = [0] *nets
