@@ -20,6 +20,18 @@ from keras.optimizers import SGD
 from keras.preprocessing.image import ImageDataGenerator
 import keras
 
+# Old documentation
+# Using PlaidML to speed up the training/testing process, since Tensorflow is not an option for me because
+# it requires an NVIDIA card, which I don't own. PlaidML on the other side is not based on CUDA but on OpenGL and thus
+# (almost) any graphics card can be used with PlaidML (in my case I have a Radeon RX 480 graphics card which speeds up
+# the training process by about 100% as if I were to use my CPU).
+
+# Installing plaidml as backend before importing keras to ensure that correct backend is used with keras
+# os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
+
+# New documentation
+# The project has been updated and now uses TensorFlow GPU instead of PlaidML.
+
 
 class Application(tk.Frame):
     """
