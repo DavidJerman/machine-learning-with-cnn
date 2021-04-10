@@ -5,6 +5,7 @@ from tkinter import messagebox
 
 from PIL import ImageTk, Image, ImageGrab
 
+# Old documentation
 # Using PlaidML to speed up the training/testing process, since Tensorflow is not an option for me because
 # it requires an NVIDIA card, which I don't own. PlaidML on the other side is not based on CUDA but on OpenGL and thus
 # (almost) any graphics card can be used with PlaidML (in my case I have a Radeon RX 480 graphics card which speeds up
@@ -12,6 +13,9 @@ from PIL import ImageTk, Image, ImageGrab
 
 # Installing plaidml as backend before importing keras to ensure that correct backend is used with keras
 # os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
+
+# New documentation
+# The project has been updated and now uses TensorFlow GPU instead of PlaidML.
 
 from keras.models import load_model
 from keras.preprocessing.image import load_img
@@ -299,7 +303,7 @@ class Application(tk.Frame):
                 digit = self.model.predict_classes(img)
                 self.write_output("Character: " + bytes.fromhex(str(self.get_key(digit[0]))).decode('utf-8'))
             except:
-                self.write_output("Unknown error has occured")
+                self.write_output("Unknown error has occurred")
         elif not self.isValidImg and not self.isValidModel:
             self.write_output("Missing model and image")
         elif not self.isValidModel:

@@ -42,7 +42,7 @@ program is easy to use and yet offers a decent amount of functionality.
 ### How to use the program
 #### Selecting the data
 The usage of the program is simple:
-1. Select the training and the test folder by clicking on the **Train folder** and the **Test folder** buttons and choose the correct folders.
+1. Select the training, and the test folder by clicking on the **Train folder**, and the **Test folder** buttons and choose the correct folders.
 2. Select the model save location with the **Save folder** button.
 #### Building the model
 To start building the model, use the interface on the left:
@@ -57,7 +57,7 @@ To start building the model, use the interface on the left:
    * SGD.
 
    The selected optimizer is also displayed in the widget on the right part of the interface below the **Optimizer** field.
-8. Enter the learning rate below the **LR** button. Clicking on the **LR** buttpn sets the learning rate to a deault value of 0,01.
+8. Enter the learning rate below the **LR** button. Clicking on the **LR** button sets the learning rate to a default value of 0,01.
 9. Select the loss function below the **Loss function** field by clicking on the desired loss function:
    * Binary CE (Binary Cross-Entropy),
    * Categorical CE (Categorical Cross-Entropy),
@@ -72,19 +72,19 @@ To start building the model, use the interface on the left:
    
 11. Now start building the model by adding the layers located below the **Add Layer** button. First select the desired layer and by clicking on the **Add Layer** button add the selected layer to the model. The most important available layers are:
 
-    * Input (Input layer, not neccessary, a convolution layer can be used instead),
+    * Input (Input layer, not necessary, a convolution layer can be used instead),
     * Convolution2D (Convolutional 2D layer),
     * MaxPooling2D (Max Pooling 2D layer),
     * Dropout (Dropout layer),
     * Flatten (Flatten layer).
 
 ##### Setting the layer parameters
-Each layer has its corresponding properties, which can be set inside of the layer itself. All of the values in the layer(s) have to be set or the model won't compile and run. Layer properties need to be entered inside of the corresponding text fields equiped with the property label name. To remove a specific layer, click on the **Remove** button located inside of the layer itself.
+Each layer has its corresponding properties, which can be set inside the layer itself. All the values in the layer(s) have to be set, or the model won't compile and run. Layer properties need to be entered inside the corresponding text fields equipped with the property label name. To remove a specific layer, click on the **Remove** button located inside the layer itself.
 #### Post and pre model-building
 ##### Getting the final (output) shape
 Below the **Output shape** field are displayed the final output layer shape (after and before flatten). To obtain the following information, first build or load the model and after that use the **Get shape** button, to get the output shapes.
 ##### Saving and loading the model
-After a model has been built, its structure can be saved into a .nets file. To do so, after the model is built, click on the **Save network** button and select the save location and the file save name.
+After a model has been built, its structure can be saved into a .nets file. To do so, after the model is built, click on the **Save network** button and select the save location, and the file save name.
 Models can also be loaded from these same files by using the **Load network** button. After clicking the **Load network** button, select the network that you want to load. Clicking on select in the explorer window will result into the old model being deleted and the new model being loaded into the program.
  
 
@@ -107,13 +107,13 @@ The model structure used in this project is the following:
 
 ![Imgur](https://i.imgur.com/F000tWX.png)
 
-The structure is pretty simple. I only used the Convolutional-2D and MaxPooling-2D layers, adn of course at the end
+The structure is pretty simple. I only used the Convolutional-2D and MaxPooling-2D layers, and of course at the end,
 the Flatten and the Dense layers. After each MaxPooling layer I also added a Dropout layer to avoid over-fitting the
 model. The dropout rate used on each dropout layer was 0.25. Input shape of the images was 128x128x1.
 
 ![Imgur](https://i.imgur.com/Eyl6qQB.png)
 
-After training the model for 5 epochs, the model achieved accuracy of 91%, reaching the desired goal of 90%. Thus this
+After training the model for 5 epochs, the model achieved accuracy of 91%, reaching the desired goal of 90%. Thus, this
 project was a success!
 
 ## The (old) backend
@@ -163,7 +163,7 @@ and marking your own using the Python computer language.](https://books.google.s
 * Python 3.x (in this project used versions 3.7 and later 3.8).
 
 ### TODO LIST
-~~Run the training in a separate process, solving the memory problem.~~
-~~Optimize the code (method generalization, removal of obsolete code).~~
-~~Update the old documentation and the word document with proper language and the changes in the project
-(new code, new features, different data processing etc.).~~
+* ~~Run the training in a separate process, solving the memory problem.~~
+* ~~Optimize the code (method generalization, removal of obsolete code).~~
+* ~~Update the old documentation and the Word document with proper language and the changes in the project~~
+* ~~(new code, new features, different data processing etc.).~~
