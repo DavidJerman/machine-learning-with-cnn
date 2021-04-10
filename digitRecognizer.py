@@ -27,7 +27,7 @@ from keras.layers import Lambda
 from keras.layers import BatchNormalization
 
 image_size = 32
-path = "C:\\Users\\david\\ML Datasets\\Characters"
+path = "C:\\Users\\[name]\\ML Datasets\\Characters"
 
 # # Initializing the CNN
 # classifier = Sequential()
