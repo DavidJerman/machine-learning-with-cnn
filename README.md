@@ -120,7 +120,7 @@ project was a success!
 The backend in this project is not Tensorflow/ Tensorflow GPU as usually. Instead, the backend used in this project is
 PlaidML: https://github.com/plaidml/plaidml. The main reason for usage of this backend is the lack of an Nvidia GPU in 
 my computer, since Tensorflow GPU works only with GPUs that support CUDA core technology (that means Nvidia GPUs only).
-PlaidML relies on OpenGL instead, allowing the usage of any GPU (Amd GPU in my case) to speed up the model learning
+PlaidML relies on OpenCL instead, allowing the usage of any GPU (Amd GPU in my case) to speed up the model learning
 process. A GPU can speed up the learning process by at least 50%.
 #### Update
 Later in the project the backend was updated from PlaidML to Tensorflow GPU due to hardware change in my personal computer.
