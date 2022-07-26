@@ -2,26 +2,20 @@ import datetime
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
+import numpy as np
 
 from PIL import ImageTk, Image, ImageGrab
 
-# Old documentation
-# Using PlaidML to speed up the training/testing process, since Tensorflow is not an option for me because
-# it requires an NVIDIA card, which I don't own. PlaidML on the other side is not based on CUDA but on OpenGL and thus
-# (almost) any graphics card can be used with PlaidML (in my case I have a Radeon RX 480 graphics card which speeds up
-# the training process by about 100% as if I were to use my CPU).
-
-# Installing plaidml as backend before importing keras to ensure that correct backend is used with keras
-# os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
-
-# New documentation
+# Documentation
 # The project has been updated and now uses TensorFlow GPU instead of PlaidML.
+# Some code has also been updated to support newer versions of TensorFlow.
 
 from keras.models import load_model
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+from keras.utils.image_utils import load_img
+from keras.utils.image_utils import img_to_array
 
 import tensorflow as tf
+
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
     try:
@@ -159,7 +153,8 @@ class Application(tk.Frame):
         self.select_model_button.config(text="Select model", width=30, command=self.get_model, bg='yellow',
                                         font=("Courier", font_size))
         self.select_model_button.grid(column=0, row=0, padx=(20, padx), pady=pady, sticky='w')
-        self.select_model_label.config(textvariable=self.model_path_var, relief='sunken', width=110, font=("Courier", 9))
+        self.select_model_label.config(textvariable=self.model_path_var, relief='sunken', width=110,
+                                       font=("Courier", 9))
         self.select_model_label.grid(column=1, row=0, columnspan=3, sticky='w', padx=padx, pady=pady)
 
         # Selection pane for image
@@ -237,10 +232,11 @@ class Application(tk.Frame):
             self.start_model()
         except FileNotFoundError:
             pass
-        except:
+        except Exception as e:
             # An error has occurred
             self.model_path_var.set("Invalid - Please try a different model/ try again")
             self.write_output("An error occurred")
+            self.write_output(e.__str__())
             self.isValidModel = False
             self.set_img_button_state()
 
@@ -260,8 +256,9 @@ class Application(tk.Frame):
             self.set_image(self.img_path_var.get())
         except FileNotFoundError:
             pass
-        except:
+        except Exception as e:
             self.img_path_var.set("Invalid - Please try a different image/ try again")
+            self.write_output(e.__str__())
             self.isValidImg = False
             self.set_img_button_state()
 
@@ -300,10 +297,11 @@ class Application(tk.Frame):
         if self.isValidModel and self.isValidImg:
             try:
                 img = self.load_image()
-                digit = self.model.predict_classes(img)
-                self.write_output("Character: " + bytes.fromhex(str(self.get_key(digit[0]))).decode('utf-8'))
-            except:
-                self.write_output("Unknown error has occurred")
+                predict_x = self.model.predict(img)
+                digit = np.argmax(predict_x, axis=1)
+                self.write_output("Character:  " + bytes.fromhex(str(self.get_key(digit[0]))).decode('utf-8'))
+            except Exception as e:
+                self.write_output("Error:" + e.__str__())
         elif not self.isValidImg and not self.isValidModel:
             self.write_output("Missing model and image")
         elif not self.isValidModel:
@@ -320,7 +318,7 @@ class Application(tk.Frame):
         if img_path is None:
             img_path = self.default_img
         img = Image.open(img_path)
-        img = img.resize((int(300), int(300)), Image.ANTIALIAS)
+        img = img.resize((int(300), int(300)), Image.LANCZOS)
         # We need to keep a reference to this image or it will not appear
         self.img = ImageTk.PhotoImage(img)
         self.img_window.create_image(20, 20, anchor=tk.NW, image=self.img)
@@ -390,8 +388,9 @@ class Application(tk.Frame):
                 # Printing out the model shape
                 self.write_output("Model input shape: (" + str(self.image_size[0]) + ", " + str(self.image_size[1])
                                   + ", " + str(self.color_depth) + ")")
-        except:
+        except Exception as e:
             self.write_output("Failed to obtain model info")
+            self.write_output(e.__str__())
 
     def start_model(self):
         """
@@ -450,9 +449,9 @@ class Application(tk.Frame):
                                                    '\nThe application provides user with the ability to test'
                                                    ' a pre-trained CNN Character model. The application was'
                                                    ' created as a part of a school project.\n'
-                                                   '\nBackend: PlaidML (https://github.com/plaidml/plaidml)\n'
+                                                   '\nBackend: Tensorflow GPU\n'
                                                    '\nAuthor: David Jerman'
-                                                   '\nVersion: 2020.11.15', master=self.master)
+                                                   '\nVersion: 2021.04.10', master=self.master)
 
     def help(self):
         """

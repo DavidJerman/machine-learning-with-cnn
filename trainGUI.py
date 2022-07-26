@@ -39,7 +39,7 @@ class Application(tk.Frame):
 
     @author David Jerman
 
-    Date of modification: 2020.04.28
+    Date of modification: 2021.04.10
     """
 
     def __init__(self, master=None, callbacks=None):
@@ -1643,9 +1643,9 @@ class Application(tk.Frame):
                                                    " needed to work with this program. The program was created for the"
                                                    " purpose of school and for the ease of use while creating a CNN "
                                                    "model without actually writing any code.\n"
-                                                   "\nBackend: PlaidML (https://github.com/plaidml/plaidml)\n"
+                                                   "\nBackend: Tensorflow GPU\n"
                                                    "\nAuthor: David Jerman"
-                                                   "\nVersion: 2020.04.02", master=self.master)
+                                                   "\nVersion: 2021.04.10", master=self.master)
 
     def help(self):
         """
